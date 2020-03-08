@@ -123,7 +123,7 @@ def findPossibleCharsInScene(imgThresh):
     imgContours = np.zeros((height, width, 3), np.uint8)
 
     for i in range(0, len(contours)):                       # za svaki obris
-        if Main.showSteps == True: # 
+        if Main.showSteps == True: 
             cv2.drawContours(imgContours, contours, i, Main.SCALAR_WHITE)
         # end if 
 
@@ -146,7 +146,7 @@ def findPossibleCharsInScene(imgThresh):
 
 def extractPlate(imgOriginal, listOfMatchingChars):
     possPlate = PossPlate.PossPlate()           
-    listOfMatchingChars.sort(key = lambda matchingChar: matchingChar.intCenterX)        # sortira charskaraktere od lijevo do desno prema x poziciji
+    listOfMatchingChars.sort(key = lambda matchingChar: matchingChar.intCenterX)        # sortira karaktere od lijevo do desno prema x poziciji
 
             # izracun centra moguce oznake
     fltPlateCenterX = (listOfMatchingChars[0].intCenterX + listOfMatchingChars[len(listOfMatchingChars) - 1].intCenterX) / 2.0
